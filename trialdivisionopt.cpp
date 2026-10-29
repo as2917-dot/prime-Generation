@@ -31,7 +31,7 @@ int main()
 	{
 	 count=0;
 	 flag=0;
-	 while(count<prime.size()&& prime[count]*prime[count]<=i)
+	 while(count<prime.size() && prime[count]*prime[count]<=i)
 	 {
 	 if(i%prime[count]==0 && i!=prime[count]) {flag=1;break;}
 	 count++;
