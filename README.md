@@ -1,0 +1,6 @@
+Naive Trial Division for prime number generation has a time complexity of O(N√N) and is highly inefficient for large input values but with the advantage of O(1) space complexity.
+
+I came up with an optimised trial division algorithm that trades some space complexity for a better time complexity of O(N√N/ln²(N)) this is achieved using previously caching all required primes till √N and only checking for division against them so we reduce complexity by a factor of 1/ln(N) due to the consequences of the Prime Number theorem. Most composites are eliminated by an early exit nearly instantly in comparison to primes this again reduces the complexity by a factor of 1/ln(N) due to the Prime Number Theorem. For N=10^8 this is about 339 times faster than naive trial division.
+The space complexity required is (√N/ln(N)) for storing √N primes, this is really small and is in KBs even for N in the order of 10^8 to 10^9,it can fit in the cpu cache memory and is much better than the traditional sieve of eratosthenes which will consumes GBs for the same. 
+
+Sieve of Eratosthenes is highly efficient for generating a large number of primes but it has a linear space complexity O(N), its time complexity is O(NloglogN) which is effectively linear, though the linear space complexity means that memory constraits are quickly hit for N in the order greater than 10^9.
